@@ -841,3 +841,50 @@ footer p {
     gap: 32px;
   }
 }
+
+
+
+
+
+
+
+
+
+/* ================= FIX INTERACTIONS (IMPORTANT) ================= */
+
+/* 1. Structure principale au-dessus */
+#hero,
+section,
+.project-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. Tous les overlays deviennent non bloquants */
+body::before,
+.hero-bg-lines,
+.hero-illustration,
+.hero-illustration svg {
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3. Tous les éléments interactifs passent au-dessus */
+a,
+.project-link,
+button {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* 4. Correction du curseur */
+body {
+  cursor: auto;
+}
+
+/* 5. Feedback visuel sur hover */
+a:hover {
+  cursor: pointer;
+}
