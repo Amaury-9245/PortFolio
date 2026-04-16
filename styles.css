@@ -161,6 +161,17 @@ nav::after {
   overflow: hidden;
 }
 
+.hero-illustration,
+.hero-bg-lines,
+body::before {
+  pointer-events: none !important;
+}
+
+.project-link {
+  position: relative;
+  z-index: 9999;
+}
+
 .hero-bg-lines {
   position: absolute;
   inset: 0;
